@@ -20,36 +20,74 @@
 
 % Title page frame
 \begin{frame}
-    \titlepage 
+  \titlepage 
 \end{frame}
 
 % Outline frame
 \begin{frame}{Outline}
-    \tableofcontents
+  \tableofcontents
 \end{frame}
 
 \section{Version Control}
 
 \subsection{In the Beginning}
 \begin{frame}{In the Beginning}
+  \begin{itemize}
+    \item Collaborative software development required fine coordination between developers;
+    \item Very hard to scale to large development teams;
+    \item Versioning was a manual operation and error prone;
+    \item No easy way to pinpoint modifications that introduced bugs;
+    \item To avoid accidental data loss, backups had to be made often.
+  \end{itemize}
+\end{frame}
+
+\subsection{Enter Version Control}
+\begin{frame}{Enter Version Control}
+  \begin{itemize}
+    \item First widely used VCS: SCCS (developed in 1972 for OS/360, ported to UNIX afterwards, could only track single files);
+    \item RCS, CVS and SVN followed (could track multiple files);
+    \item Distributed VCS like BitKeeper, Git, Mercurial and Bazaar entered the scene a few years later.
+  \end{itemize}
 \end{frame}
 
 \subsection{Version Control Concepts}
 \begin{frame}{Version Control Concepts}
+  \begin{itemize}
+    \item Software to track modifications of a single file or a set of files (repository);
+    \item Presents a history of states (commits) of a repository;
+    \item Can store different history lines for the same repository (branches).
+  \end{itemize}
 \end{frame}
 
 \subsection{Centralized Version Control}
 \begin{frame}{Centralized Version Control}
+  \begin{itemize}
+    \item Requires a central server for almost all version control operations;
+    \item Generally have the capability to 'lock files' to avoid concurrent modifications to the same file;
+    \item Network access is required for collaborative development;
+    \item No local branches.
+  \end{itemize}
 \end{frame}
 
 \subsection{Distributed Version Control}
 \begin{frame}{Distributed Version Control}
+  \begin{itemize}
+    \item There is no central server that coordinates commits, merges and other version control operations;
+    \item Everything can be done locally, no network access required;
+    \item All developers have a full copy of the repository history, resulting in a 'distributed backup' of the repository.
+  \end{itemize}
 \end{frame}
 
 \section{Git}
 
-\subsection{Distributed Version Control}
-\begin{frame}{Distributed Version Control}
-\end{frame} 
+\subsection{Git Design Goals}
+\begin{frame}{Git Design Goals}
+  \begin{itemize}
+    \item High performance; 
+    \item Data integrity;
+    \item Support distributed, non-linear workflows;
+    \item Easy branching.
+  \end{itemize}
+\end{frame}
 
 \end{document}
