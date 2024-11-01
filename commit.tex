@@ -1,0 +1,11 @@
+\begin{verbatim}
+commit 51ad3af99a4e234aff70ab5046c099b46d8e7ee1
+Author: Augusto Fraga Giachero <augusto.fraga@lnls.br>
+Date:   Thu Sep 12 08:48:06 2024 -0300
+
+    Remove CDC for adc_gains_fixed_point_pos register
+    
+    The adc_gains_fixed_point_pos is a constant, no need to cross clock
+    domains. This fixes a problem when trying to read this register before
+    initializing the fs_clk2x_i clock.
+\end{verbatim}
