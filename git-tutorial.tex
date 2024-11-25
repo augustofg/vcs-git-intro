@@ -67,7 +67,7 @@
 \begin{frame}{Staging}
   \begin{itemize}
     \item Before commiting, you should stage your modifications;
-    \item Avoid using \texttt{git add .} as it may inadvertently stage undesirable files;
+    \item Avoid using \texttt{git add .} as it may inadvertently stage undesirable files. \texttt{git add --update} will only add files which are already tracked by git, which is usually closer to the desired effect;
     \item You can stage parts of a file with \texttt{git add -p} \textit{file};
     \item To unstage a file, use the \texttt{git reset} \textit{file} command.
   \end{itemize}
