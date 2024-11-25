@@ -46,7 +46,7 @@
     \texttt{\$ git config --global core.editor vim}
   \end{block}
   \begin{flushright}
-    Note: The email used here have nothing to do \\ with Gitlab/Github/Bitbucket credentials.
+    Note: The email used here has nothing to do \\ with Gitlab/Github/Bitbucket credentials.
   \end{flushright}
 \end{frame}
 
@@ -129,7 +129,7 @@
   \begin{itemize}
     \item Will create a new `merge' commit that references two or more parent commits;
     \item Any conflicts will be solved in the merge commit, preserving the original history in the source branch;
-    \item The history is a bit more complicated to follow, as the branch now contains an `directed acyclic graph' instead of a single `thread' of commits.
+    \item The history is a bit more complicated to follow, as the branch now contains a `directed acyclic graph' instead of a single `thread' of commits.
   \end{itemize}
   \begin{center}
     \includegraphics[scale=0.5]{git-true-merge}
@@ -216,7 +216,7 @@
 \subsection{Remote Repository}
 \begin{frame}{Remote Repository}
   \begin{itemize}
-    \item Although Git is a distributed VCS, it is common to have an central upstream remote repository to concentrate all development;
+    \item Although Git is a distributed VCS, it is common to have a central upstream remote repository to concentrate all development;
     \item It is recommended that you use SSH keys to authenticate with the remote server;
     \item You can then use the \texttt{git push} and \texttt{git pull} commands to synchronize remote and local branches.
   \end{itemize}
@@ -250,8 +250,8 @@
 \subsection{Revert}
 \begin{frame}{Revert}
   \begin{itemize}
-    \item Creates a new commit that `undo' a previous commit;
-    \item Doesn't re-writes history, can be used safely in public development branches.
+    \item Creates a new commit that `undoes' a previous commit;
+    \item Doesn't re-write history, can be used safely in public development branches.
   \end{itemize}
   \begin{block}{}
     \texttt{\$ git revert c463a746}
