@@ -100,7 +100,7 @@
     \item Essential part of the code review process.
   \end{itemize}
   \begin{block}{}
-    \texttt{\$ git checkout -b new-branch} \\
+    \texttt{\$ git switch -c new-branch} \\
     \texttt{\$ echo "\# Nice documentation" > README.md} \\
     \texttt{\$ git add README.md} \\
     \texttt{\$ git commit}
@@ -120,7 +120,7 @@
     \end{itemize}
   \end{itemize}
   \begin{block}{}
-    \texttt{\$ git checkout master} \\
+    \texttt{\$ git switch master} \\
     \texttt{\$ git merge new-branch}
   \end{block}
 \end{frame}
@@ -178,10 +178,10 @@
   \begin{block}{}
     \texttt{\$ echo "Be nice to others when asking for help." >> README.md} \\
     \texttt{\$ git commit} \\
-    \texttt{\$ git checkout new-branch} \\
+    \texttt{\$ git switch new-branch} \\
     \texttt{\$ echo "Remember to turn on your computer before using this." >> README.md} \\
     \texttt{\$ git commit} \\
-    \texttt{\$ git checkout master} \\
+    \texttt{\$ git switch master} \\
     \texttt{\$ git merge new-branch}
   \end{block}
 \end{frame}
@@ -207,8 +207,8 @@
   \begin{block}{}
     \texttt{\$ echo "More info" >> README.md} \\
     \texttt{\$ git stash} \\
-    \texttt{\$ git checkout master} \\
-    \texttt{\$ git checkout new-branch} \\
+    \texttt{\$ git switch master} \\
+    \texttt{\$ git switch new-branch} \\
     \texttt{\$ git stash pop}
   \end{block}
 \end{frame}
