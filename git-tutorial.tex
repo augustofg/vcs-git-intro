@@ -138,7 +138,7 @@
 
 \begin{frame}{Fast Forward Merges}
   \begin{itemize}
-    \item Only possible if the destination branch doesn't have commits that aren't in the source branch;
+    \item Only possible if the destination branch doesn't have commits that aren't in the source branch, i.e. the source branch's history includes the top of the destination branch;
     \item Doesn't create new commits, just updates the branch pointer;
     \item It is the default behavior of \texttt{git merge} if it is possible, otherwise a true merge will be done.
   \end{itemize}
