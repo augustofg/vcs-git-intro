@@ -46,7 +46,7 @@
     \texttt{\$ git config --global core.editor vim}
   \end{block}
   \begin{flushright}
-    Note: The email used here have nothing to do \\ with Gitlab/Github/Bitbucket credentials.
+    Note: The email used here has nothing to do \\ with Gitlab/Github/Bitbucket credentials.
   \end{flushright}
 \end{frame}
 
@@ -54,7 +54,7 @@
 \begin{frame}{Creating a Repository}
   \begin{itemize}
     \item You should initialize a git repository in the root directory of the project, it doesn't need to be empty;
-    \item It is a good idea to also include a \texttt{.gitignore} file from the beginning to avoid accidentally commiting temporary files or files not relevant to the project. You can use third party tools to automatically generate \texttt{.gitignore} files like \href{https://github.com/simonwhitaker/gibo}{gibo}.
+    \item It is a good idea to also include a \texttt{.gitignore} file from the beginning to avoid accidentally commiting temporary files or files not relevant to the project. You can use third party tools to automatically generate \texttt{.gitignore} files like \href{https://github.com/simonwhitaker/gibo}{gibo} or \href{https://www.toptal.com/developers/gitignore/}{gitignore.io}.
   \end{itemize}
   \begin{block}{}
     \texttt{\$ mkdir project \&\& cd project} \\
@@ -67,7 +67,7 @@
 \begin{frame}{Staging}
   \begin{itemize}
     \item Before commiting, you should stage your modifications;
-    \item Avoid using \texttt{git add .} as it may inadvertently stage undesirable files;
+    \item Avoid using \texttt{git add .} as it may inadvertently stage undesirable files. \texttt{git add --update} will only add files which are already tracked by git, which is usually closer to the desired effect;
     \item You can stage parts of a file with \texttt{git add -p} \textit{file};
     \item To unstage a file, use the \texttt{git reset} \textit{file} command.
   \end{itemize}
@@ -100,7 +100,7 @@
     \item Essential part of the code review process.
   \end{itemize}
   \begin{block}{}
-    \texttt{\$ git checkout -b new-branch} \\
+    \texttt{\$ git switch -c new-branch} \\
     \texttt{\$ echo "\# Nice documentation" > README.md} \\
     \texttt{\$ git add README.md} \\
     \texttt{\$ git commit}
@@ -120,7 +120,7 @@
     \end{itemize}
   \end{itemize}
   \begin{block}{}
-    \texttt{\$ git checkout master} \\
+    \texttt{\$ git switch master} \\
     \texttt{\$ git merge new-branch}
   \end{block}
 \end{frame}
@@ -129,7 +129,7 @@
   \begin{itemize}
     \item Will create a new `merge' commit that references two or more parent commits;
     \item Any conflicts will be solved in the merge commit, preserving the original history in the source branch;
-    \item The history is a bit more complicated to follow, as the branch now contains an `directed acyclic graph' instead of a single `thread' of commits.
+    \item The history is a bit more complicated to follow, as the branch now contains a `directed acyclic graph' instead of a single `thread' of commits.
   \end{itemize}
   \begin{center}
     \includegraphics[scale=0.5]{git-true-merge}
@@ -138,7 +138,7 @@
 
 \begin{frame}{Fast Forward Merges}
   \begin{itemize}
-    \item Only possible if the destination branch doesn't have commits that aren't in the source branch;
+    \item Only possible if the destination branch doesn't have commits that aren't in the source branch, i.e. the source branch's history includes the top of the destination branch;
     \item Doesn't create new commits, just updates the branch pointer;
     \item It is the default behavior of \texttt{git merge} if it is possible, otherwise a true merge will be done.
   \end{itemize}
@@ -178,10 +178,10 @@
   \begin{block}{}
     \texttt{\$ echo "Be nice to others when asking for help." >> README.md} \\
     \texttt{\$ git commit} \\
-    \texttt{\$ git checkout new-branch} \\
+    \texttt{\$ git switch new-branch} \\
     \texttt{\$ echo "Remember to turn on your computer before using this." >> README.md} \\
     \texttt{\$ git commit} \\
-    \texttt{\$ git checkout master} \\
+    \texttt{\$ git switch master} \\
     \texttt{\$ git merge new-branch}
   \end{block}
 \end{frame}
@@ -207,8 +207,8 @@
   \begin{block}{}
     \texttt{\$ echo "More info" >> README.md} \\
     \texttt{\$ git stash} \\
-    \texttt{\$ git checkout master} \\
-    \texttt{\$ git checkout new-branch} \\
+    \texttt{\$ git switch master} \\
+    \texttt{\$ git switch new-branch} \\
     \texttt{\$ git stash pop}
   \end{block}
 \end{frame}
@@ -216,7 +216,7 @@
 \subsection{Remote Repository}
 \begin{frame}{Remote Repository}
   \begin{itemize}
-    \item Although Git is a distributed VCS, it is common to have an central upstream remote repository to concentrate all development;
+    \item Although Git is a distributed VCS, it is common to have a central upstream remote repository to concentrate all development;
     \item It is recommended that you use SSH keys to authenticate with the remote server;
     \item You can then use the \texttt{git push} and \texttt{git pull} commands to synchronize remote and local branches.
   \end{itemize}
@@ -245,13 +245,23 @@
   \end{block}
 \end{frame}
 
+\subsection{Manual pages}
+\begin{frame}{Manual pages}
+  \begin{itemize}
+    \item Git provides extensive manual pages which can be accessed right from the terminal where it's being used;
+    \item \texttt{man git} lists the main commands under the \textbf{Main porcelain commands} header;
+    \item Manual pages are usually named \texttt{git-<subcommand>(1)}, e.g. you can access the \texttt{git commit} man page with \texttt{man git-commit}.
+  \end{itemize}
+\end{frame}
+
 \section{Advanced}
 
 \subsection{Revert}
 \begin{frame}{Revert}
   \begin{itemize}
-    \item Creates a new commit that `undo' a previous commit;
-    \item Doesn't re-writes history, can be used safely in public development branches.
+    \item Creates a new commit that `undoes' a previous commit;
+    \item Doesn't re-write history, can be used safely in public development branches;
+    \item The commit message can be edited to include additional context and motivation for the change.
   \end{itemize}
   \begin{block}{}
     \texttt{\$ git revert c463a746}
@@ -311,7 +321,7 @@
   \begin{block}{}
     \texttt{\$ git reset --soft caaacf6 \# Modifications are staged} \\
     \texttt{\$ git reset --mixed caaacf6 \# Modifications are kept, but unstaged} \\
-    \texttt{\$ git reset --hard caaacf6 \# Modifications are discarded}
+    \texttt{\$ git reset --hard caaacf6 \# Modifications are DISCARDED (possible data loss)}
   \end{block}
 \end{frame}
 
