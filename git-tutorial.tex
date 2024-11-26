@@ -29,7 +29,14 @@
 
 % Outline frame
 \begin{frame}{Outline}
-  \tableofcontents
+  \begin{columns}
+    \begin{column}[T]{0.5\textwidth}
+      \tableofcontents[sections=1]
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}
+      \tableofcontents[sections=2]
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Basics}
