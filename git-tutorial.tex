@@ -100,6 +100,23 @@
   \end{scriptsize}
 \end{frame}
 
+\subsection{Commit messages}
+\begin{frame}{Commit messages}
+  What's an \textbf{in-depth explanation}? The items below aren't an exhaustive list, but should be considered when writing;
+  \begin{itemize}
+    \item A commit is accompanied by a diff, so the actual changes don't have to be repeated (this doesn't apply for binary projects);
+    \item Explain \textbf{what} problem the commit fixes, or why a new feature is necessary: what's being solved might not be clear from the changes;
+    \item Explain \textbf{how} a change works (not \textit{how it was implemented}): what's obvious now might not be obvious 3 months later;
+    \item Explain \textbf{why} this strategy was chosen: were other options evaluated? Which ones? What were the advantages of this one?
+    \item External references, used for information or code, should be linked;
+    \item Mention relevant results: benchmarks, LoC reduction, etc;
+    \item Difficulties encountered, bugs in initial versions, attention points can also be mentioned.
+  \end{itemize}
+  \begin{block}{}
+    Commit messages have formatting rules: preferably, the title should have 50 or fewer characters. Lines of the message body should be wrapped at 72 characters.
+  \end{block}
+\end{frame}
+
 \subsection{Branching}
 \begin{frame}{Branching}
   \begin{itemize}
