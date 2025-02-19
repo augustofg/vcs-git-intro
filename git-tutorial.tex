@@ -376,6 +376,20 @@
   \end{block}
 \end{frame}
 
+\subsection{Multiple Remotes}
+\begin{frame}{Multiple Remotes}
+  A repository might need to push and/or pull changes from different remotes (e.g. internal GitLab and public GitHub). This can happen when it is necessary to make a copy of a repository somewhere else; or a repository has been forked, and changes need to be synched between the two versions.
+  \begin{itemize}
+    \item Additional remotes can be added with \texttt{git remote add};
+    \item Each remote has its own name. When dealing with forks, a common name for the official version is \texttt{upstream};
+    \item Branches from each remote that aren't checked out locally are available as \texttt{<remote\_name>/<branch\_name>};
+    \item A local branch or tag can be pushed to different remotes using \texttt{git push <remote\_name> <branch\_name>}.
+  \end{itemize}
+  \begin{block}{}
+    Remember to use multiple remotes when copying a repository into GitLab, for example!
+  \end{block}
+\end{frame}
+
 \begin{frame}{Contact}
   email: \href{mailto:augusto.fraga@lnls.br}{augusto.fraga@lnls.br} \\
   Github page: \url{github.com/augustofg} \\
