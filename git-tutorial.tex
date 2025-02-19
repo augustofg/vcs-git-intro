@@ -253,12 +253,14 @@
     \texttt{\$ git remote add origin git@github.com:augustofg/my-repo} \\
     \texttt{\$ git push --set-upstream origin master}
   \end{block}
+  A remote can be named anything, but we used \texttt{origin}, because it is the default when a repository is cloned.
 \end{frame}
 
 \begin{frame}{Remote repository good practices}
   \begin{itemize}
     \item Never re-write the history of public development branches like `master', `main', `devel';
     \item Re-writing the history of temporary feature branches not merged yet is fine though;
+    \item When rewriting history, use \texttt{git push --force-with-lease} to guarantee you aren't overwriting changes from another user;
     \item When using services like GitHub, Gitlab, Bitbucket, etc, use pull or merge requests to make code reviewing easier.
   \end{itemize}
 \end{frame}
