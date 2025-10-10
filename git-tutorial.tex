@@ -144,8 +144,8 @@
     \begin{itemize}
       \item `True' merge;
       \item Fast forward merge;
-      \item Squash merge;
-      \item Rebase merge.
+      \item Squash merge (advanced);
+      \item Rebase merge (advanced).
     \end{itemize}
   \end{itemize}
   \begin{block}{}
@@ -173,27 +173,6 @@
   \end{itemize}
   \begin{center}
     \includegraphics[scale=0.5]{git-fast-forward-merge}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Squash Merges}
-  \begin{itemize}
-    \item Takes the new commits in the source branch and 'squashes' into a single commit in the destination branch;
-    \item Doesn't preserve the history of the source branch in the destination branch.
-  \end{itemize}
-  \begin{center}
-    \includegraphics[scale=0.5]{git-squash-merge}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Rebase Merges}
-  \begin{itemize}
-    \item Re-applies the new commits in the source branch to the top of the destination branch;
-    \item Re-writes the history of the source branch, so it must be used with care to avoid changing the history of public development branches;
-    \item Keeps the history `linear' (i.e. no merge commits pointing to two or more commits).
-  \end{itemize}
-  \begin{center}
-    \includegraphics[scale=0.5]{git-rebase-merge}
   \end{center}
 \end{frame}
 
@@ -265,17 +244,6 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Submodules}
-\begin{frame}{Submodules}
-  \begin{itemize}
-    \item Adds a git repository `inside' another, checked in specific commit;
-    \item Useful to make a self-contained project that depends on specific versions of other projects.
-  \end{itemize}
-  \begin{block}{}
-    \texttt{\$ git submodule add https://github.com/lnls-dig/infra-cores.git}
-  \end{block}
-\end{frame}
-
 \subsection{Manual pages}
 \begin{frame}{Manual pages}
   \begin{itemize}
@@ -286,6 +254,38 @@
 \end{frame}
 
 \section{Advanced}
+\subsection{Squash and Rebase}
+\begin{frame}{Squash Merges}
+  \begin{itemize}
+    \item Takes the new commits in the source branch and 'squashes' into a single commit in the destination branch;
+    \item Doesn't preserve the history of the source branch in the destination branch.
+  \end{itemize}
+  \begin{center}
+    \includegraphics[scale=0.5]{git-squash-merge}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Rebase Merges}
+  \begin{itemize}
+    \item Re-applies the new commits in the source branch to the top of the destination branch;
+    \item Re-writes the history of the source branch, so it must be used with care to avoid changing the history of public development branches;
+    \item Keeps the history `linear' (i.e. no merge commits pointing to two or more commits).
+  \end{itemize}
+  \begin{center}
+    \includegraphics[scale=0.5]{git-rebase-merge}
+  \end{center}
+\end{frame}
+
+\subsection{Submodules}
+\begin{frame}{Submodules}
+  \begin{itemize}
+    \item Adds a git repository `inside' another, checked in specific commit;
+    \item Useful to make a self-contained project that depends on specific versions of other projects.
+  \end{itemize}
+  \begin{block}{}
+    \texttt{\$ git submodule add https://github.com/lnls-dig/infra-cores.git}
+  \end{block}
+\end{frame}
 
 \subsection{Revert}
 \begin{frame}{Revert}
